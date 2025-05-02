@@ -25,11 +25,11 @@ app.use(cors());
 
 const port = process.env.PORT;
 
-app.use('/api/movies', moviesRouter); 
-
 app.use(express.json());
 
 app.use('/api/users', usersRouter);
+
+app.use('/api/movies', moviesRouter); 
 
 app.use(errHandler);
 
