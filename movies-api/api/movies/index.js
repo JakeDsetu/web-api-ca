@@ -9,6 +9,11 @@ router.get('/discover', asyncHandler(async (req, res) => {
     res.status(200).json(discoverMovies);
 }));
 
+router.get('/top_rated', asyncHandler(async (req, res) => {
+    const discoverMovies = await getMovies();
+    res.status(200).json(discoverMovies);
+}));
+
 
 export default router;
 

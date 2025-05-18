@@ -129,7 +129,7 @@ export const getAltTitles = (args) => {
 
   export const getTopRated = () => {
     return fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
+      `http://localhost:8080/api/movies/top_rated`
     ).then((response) => {
       if (!response.ok) {
         return response.json().then((error) => {
