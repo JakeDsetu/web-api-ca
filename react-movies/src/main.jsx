@@ -2,6 +2,9 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes} from "react-router";
 import HomePage from "./pages/homePage";
+import LoginPage from "./pages/loginPage";
+import SignupPage from "./pages/signupPage";
+import ProfilePage from "./pages/profilePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favouriteMoviesPage";
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
@@ -10,6 +13,8 @@ import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage";
 import PopularMoviesPage from "./pages/popularMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
+import AuthContextProvider from "./contexts/authContext";
+import ProtectedRoutes from "./protectedRoutes";
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import MoviesContextProvider from "./contexts/moviesContext";
@@ -61,6 +66,9 @@ const App = () => {
             <Route path="/movies/topRated" element={<TopRatedMoviesPage />} />
             <Route path="/movies/nowPlaying" element={<NowPlayingMoviesPage />} />
             <Route path="/movies/popular" element={<PopularMoviesPage />} />
+            <Route path="/movies/login" element={<LoginPage />} />
+            <Route path="/movies/signup" element={<SignupPage />} />
+            <Route path="/movies/profile" element={<ProfilePage />} />
             <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />
