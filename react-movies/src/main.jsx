@@ -60,6 +60,7 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <SiteHeader />
         <MoviesContextProvider>
+        <AuthContextProvider>
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
             <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
@@ -75,6 +76,7 @@ const App = () => {
             <Route path="*" element={ <Navigate to="/" /> } />
             <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
           </Routes>
+        </AuthContextProvider>
         </MoviesContextProvider>
         </ThemeProvider>
       </BrowserRouter>
